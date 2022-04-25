@@ -16,39 +16,21 @@ import fun from './Fun';
 
 import { useState } from 'react';
 
+function Page(icon, title, content) {
+    this.icon = icon;
+    this.title = title;
+    this.content = content;
+}
+
 export default function Book() {
     const [curr, setCurr] = useState(0);
     const pages = [
-        {
-            icon: EyeIcon,
-            title: "Cover",
-            content: cover(setCurr),
-        },
-        {
-            icon: NameIcon,
-            title: "About Me",
-            content: aboutme,
-        },
-        {
-            icon: BookIcon,
-            title: "Education",
-            content: education,
-        },
-        {
-            icon: LinkIcon,
-            title: "Projects",
-            content: projects,
-        },
-        {
-            icon: PPlaneIcon,
-            title: "Contact",
-            content: contact,
-        },
-        {
-            icon: SunIcon,
-            title: "Fun",
-            content: fun,
-        },
+        new Page(EyeIcon, "Cover", cover(setCurr)),
+        new Page(NameIcon, "About Me", aboutme),
+        new Page(BookIcon, "Education", education),
+        new Page(LinkIcon, "Projects", projects),
+        new Page(PPlaneIcon, "Contact", contact),
+        new Page(SunIcon, "Fun", fun)
     ];
     return (
         <IBook curr={curr} setCurr={setCurr} pages={pages}>
