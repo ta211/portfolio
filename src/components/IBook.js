@@ -35,7 +35,7 @@ export default function IBook({curr, setCurr, pages}) {
 
     return (
         <div className="ibook-container">
-            <div className="ibook-spine">
+            <div className="ibook-spine" id="ibook-spine">
                 <div className="ibook-spine-1" />
                 <div className="ibook-spine-2" />
                 <div className="ibook-spine-3" />
@@ -51,7 +51,8 @@ export default function IBook({curr, setCurr, pages}) {
                             title={title} 
                             left={true}
                             index={index} 
-                            onclick={() => setCurr(index)}
+                            curr={curr}
+                            setCurr={setCurr}
                         />
                     )}
                 </div>
@@ -63,13 +64,14 @@ export default function IBook({curr, setCurr, pages}) {
                             left={false}
                             index={curr+1+index} 
                             length={length}
-                            onclick={() => setCurr(curr+1+index)}
+                            curr={curr}
+                            setCurr={setCurr}
                         />
                     ).reverse()}
                 </div>
             </div>
             <div className="ibook-curr-page">
-                <div className="ibook-curr-left">
+                <div className="ibook-curr-left" id="ibook-curr-left">
                     <LeftPageCurr 
                         icon={pages[curr].icon} 
                         title={pages[curr].title}
@@ -78,7 +80,7 @@ export default function IBook({curr, setCurr, pages}) {
                         {pages[curr].content}
                     </LeftPageCurr>
                 </div>
-                <div className="ibook-curr-right">
+                <div className="ibook-curr-right" id="ibook-curr-right">
                     <RightPageCurr 
                         index={curr}
                         length={length}

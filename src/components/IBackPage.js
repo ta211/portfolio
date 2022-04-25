@@ -1,6 +1,25 @@
 import IPage from './IPage';
 
-export default function IBackPage({icon, title, index, left, length, onclick}) {
+function flipPage(index, curr, setCurr) {
+    const dir_from = index < curr ? "left" : "right";
+    const dir_to = index < curr ? "right" : "left";
+    document.getElementById("ibook-spine").style.zIndex = 0;
+    document.getElementById("ibook-curr-"+dir_from).classList.add("flip-"+dir_to);
+    document.getElementById("ibook-curr-"+dir_to).classList.add("flip-"+dir_to);
+    setTimeout(() => {
+        document.getElementById("ibook-curr-"+dir_from).classList.remove("flip-"+dir_to);
+        document.getElementById("ibook-curr-"+dir_to).classList.remove("flip-"+dir_to);
+        setCurr(index);
+        setTimeout(() => {
+            document.getElementById("ibook-spine").style.zIndex = 100;
+        }, 500)
+    }, 500);
+}
+
+export default function IBackPage({icon, title, index, left, length, curr, setCurr}) {
+    function onClick () {
+        flipPage(index, curr, setCurr);
+    }
     const pagetitle_inner = left ? (
         <>
             <img src={icon} className="pagetitle-icon" /><div className="pagetitle-text">
@@ -18,7 +37,7 @@ export default function IBackPage({icon, title, index, left, length, onclick}) {
     return (
         <IPage index={index} left={left} length={length}>
             <div className="pageheader bookmark">
-                <div className="pagetitle" onClick={onclick}>
+                <div className="pagetitle" onClick={onClick}>
                     {pagetitle_inner}
                 </div>
             </div>
