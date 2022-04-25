@@ -1,0 +1,42 @@
+.edu-left-container {
+    position: absolute;
+    margin: 70% 50px 0 20px;
+    font-family: "Monda", sans-serif;
+
+    .edu-row {
+        .edu-title {
+            font-size: 18px;
+        }
+        .edu-majors {
+            .edu-major {
+                cursor: pointer;
+                display: flex;
+                font-size: 15px;
+                .edu-major-name {
+                    text-decoration: underline;
+                }
+                &-pointer {
+                    margin-right: 10px;
+                }
+            }
+            .edu-major-selected {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.edu-right-container {
+    display: none;
+    $margin: 20px;
+    height: 100%;
+    margin-left: 50px;
+    font-family: "Monda", sans-serif;
+
+    .edu-major-name {
+        margin: $margin*2 $margin;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
