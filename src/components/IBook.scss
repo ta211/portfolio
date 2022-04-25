@@ -146,7 +146,7 @@ $lighter-grey: #DADADA;
         transform: rotateY(90deg);
     }
     .flip-left .leftpage {
-        transition: transform 0s;
+        transition: transform $transition-time;
         transform: rotateY(-90deg);
     }
 
@@ -157,7 +157,7 @@ $lighter-grey: #DADADA;
         transform: rotateY(90deg);
     }
     .flip-right .rightpage {
-        transition: transform 0s;
+        transition: transform $transition-time;
         transform: rotateY(-90deg);
     }
 }

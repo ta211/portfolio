@@ -8,6 +8,11 @@ import PPlaneIcon from '../icons/paper-plane-icon.svg';
 import SunIcon from '../icons/sun-icon.svg';
 
 import cover from './Cover';
+import aboutme from './AboutMe';
+import education from './Education';
+import projects from './Projects';
+import contact from './Contact';
+import fun from './Fun';
 
 import { useState } from 'react';
 
@@ -22,27 +27,27 @@ export default function Book() {
         {
             icon: NameIcon,
             title: "About Me",
-            content: <div></div>,
+            content: aboutme,
         },
         {
             icon: BookIcon,
             title: "Education",
-            content: <div></div>,
+            content: education,
         },
         {
             icon: LinkIcon,
             title: "Projects",
-            content: <div></div>,
+            content: projects,
         },
         {
             icon: PPlaneIcon,
             title: "Contact",
-            content: <div></div>,
+            content: contact,
         },
         {
             icon: SunIcon,
             title: "Fun",
-            content: <div></div>,
+            content: fun,
         },
     ];
     return (
