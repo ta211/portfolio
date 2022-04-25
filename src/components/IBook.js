@@ -6,7 +6,6 @@ import IBackPage from './IBackPage';
 import EyeIcon from '../icons/eye.svg';
 
 function LeftPageCurr({icon, title, children, index}) {
-    console.log(children);
     return (
         <IPage index={index} left={true}>
             {index == 0 || (<div className="pageheader">
@@ -48,6 +47,7 @@ export default function IBook({curr, setCurr, pages}) {
                 <div className="ibook-left-pages">
                     {pages.slice(0, curr).map(({icon, title}, index) => 
                         <IBackPage 
+                            key={index}
                             icon={icon} 
                             title={title} 
                             left={true}
@@ -60,6 +60,7 @@ export default function IBook({curr, setCurr, pages}) {
                 <div className="ibook-right-pages">
                     {pages.slice(curr + 1).map(({icon, title}, index) => 
                         <IBackPage 
+                            key={index}
                             icon={icon} 
                             title={title} 
                             left={false}
