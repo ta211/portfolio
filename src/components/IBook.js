@@ -1,6 +1,7 @@
 import './IBook.scss';
 
 import IPage from './IPage';
+import IBackPage from './IBackPage';
 
 import EyeIcon from '../icons/eye.svg';
 
@@ -21,45 +22,15 @@ function LeftPageCurr({icon, title, children, index}) {
     );
 }
 
-function RightPageCurr({children, index}) {
+function RightPageCurr({children, index, length}) {
     return (
-        <IPage index={index} left={false}>
+        <IPage index={index} left={false} length={length}>
             {children}
         </IPage>
     );
 }
 
-function LeftPageBack({icon, title, index}) {
-    return (
-        <IPage index={index} left={true}>
-            <div className="pageheader bookmark">
-                <div className="pagetitle">
-                    <img src={icon} className="pagetitle-icon"/>
-                    <div className="pagetitle-text">
-                        {title}
-                    </div>
-                </div>
-            </div>
-        </IPage>
-    );
-}
-
-function RightPageBack({icon, title, index}) {
-    return (
-        <IPage index={index} left={false}>
-            <div className="pageheader bookmark">
-                <div className="pagetitle">
-                    <div className="pagetitle-text">
-                        {title}
-                    </div>
-                    <img src={icon} className="pagetitle-icon"/>
-                </div>
-            </div>
-        </IPage>
-    );
-}
-
-export default function IBook({curr, pages}) {
+export default function IBook({curr, setCurr, pages}) {
     const length = pages.length;
 
     return (
@@ -75,13 +46,26 @@ export default function IBook({curr, pages}) {
             <div className="ibook-back-pages">
                 <div className="ibook-left-pages">
                     {pages.slice(0, curr).map(({icon, title}, index) => 
-                        <LeftPageBack icon={icon} title={title} index={index} />
+                        <IBackPage 
+                            icon={icon} 
+                            title={title} 
+                            left={true}
+                            index={index} 
+                            onclick={() => setCurr(index)}
+                        />
                     )}
                 </div>
                 <div className="ibook-right-pages">
-                    {pages.slice(curr + 1).reverse().map(({icon, title}, index) => 
-                        <RightPageBack icon={icon} title={title} index={index}/>
-                    )}
+                    {pages.slice(curr + 1).map(({icon, title}, index) => 
+                        <IBackPage 
+                            icon={icon} 
+                            title={title} 
+                            left={false}
+                            index={curr+1+index} 
+                            length={length}
+                            onclick={() => setCurr(curr+1+index)}
+                        />
+                    ).reverse()}
                 </div>
             </div>
             <div className="ibook-curr-page">
@@ -96,7 +80,8 @@ export default function IBook({curr, pages}) {
                 </div>
                 <div className="ibook-curr-right">
                     <RightPageCurr 
-                        index={length-1-curr}
+                        index={curr}
+                        length={length}
                     >
                         {pages[curr].content}
                     </RightPageCurr>

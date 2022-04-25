@@ -7,8 +7,10 @@ import LinkIcon from '../icons/link-icon.svg';
 import PPlaneIcon from '../icons/paper-plane-icon.svg';
 import SunIcon from '../icons/sun-icon.svg';
 
+import { useState } from 'react';
+
 export default function Book() {
-    const curr = 2; // Projects
+    const [curr, setCurr] = useState(0);
     const pages = [
         {
             icon: EyeIcon,
@@ -42,7 +44,7 @@ export default function Book() {
         },
     ];
     return (
-        <IBook curr={0} pages={pages}>
+        <IBook curr={curr} setCurr={setCurr} pages={pages}>
         </IBook>
     );
 }

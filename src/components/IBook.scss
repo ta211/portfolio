@@ -34,7 +34,6 @@ $light-grey: #B8B8B8;
     margin: $margin 0 $margin 0;
     position: absolute;
     height: calc(100% - 2 * $margin);
-    width: calc(50% - $margin * (var(--index) + 1));
     background-color: white;
     box-shadow: 0px 4px 4px 0px black;
     
@@ -105,12 +104,14 @@ $light-grey: #B8B8B8;
 
 .leftpage {
     $margin: 15px;
+    width: calc(50% - $margin * (var(--index) + 1));
     margin-left: calc($margin * (var(--index) + 1));
     border-radius: 5px 0 0 5px;
 }
 
 .rightpage {
     $margin: 15px;
+    width: calc(50% - $margin * (var(--length) - var(--index)));
     left: 50%;
     margin-right: calc($margin * (var(--index) + 1));
     border-radius: 0 5px 5px 0;
