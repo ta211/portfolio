@@ -3,11 +3,6 @@ import './IBook.scss';
 import IPage from './IPage';
 
 import EyeIcon from '../icons/eye.svg';
-import NameIcon from '../icons/name-icon.svg';
-import BookIcon from '../icons/book-icon.svg';
-import LinkIcon from '../icons/link-icon.svg';
-import PPlaneIcon from '../icons/paper-plane-icon.svg';
-import SunIcon from '../icons/sun-icon.svg';
 
 function LeftPageCurr({icon, title, children, index}) {
     return (
@@ -65,39 +60,6 @@ function RightPageBack({icon, title, index}) {
 }
 
 export default function IBook({curr, pages}) {
-    curr = 2; // Projects
-    pages = [
-        {
-            icon: EyeIcon,
-            title: "Home",
-            content: <div></div>,
-        },
-        {
-            icon: NameIcon,
-            title: "About Me",
-            content: <div></div>,
-        },
-        {
-            icon: BookIcon,
-            title: "Education",
-            content: <div></div>,
-        },
-        {
-            icon: LinkIcon,
-            title: "Projects",
-            content: <div></div>,
-        },
-        {
-            icon: PPlaneIcon,
-            title: "Contact",
-            content: <div></div>,
-        },
-        {
-            icon: SunIcon,
-            title: "Fun",
-            content: <div></div>,
-        },
-    ];
     const length = pages.length;
 
     return (
