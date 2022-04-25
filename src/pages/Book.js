@@ -7,6 +7,8 @@ import LinkIcon from '../icons/link-icon.svg';
 import PPlaneIcon from '../icons/paper-plane-icon.svg';
 import SunIcon from '../icons/sun-icon.svg';
 
+import cover from './Cover';
+
 import { useState } from 'react';
 
 export default function Book() {
@@ -15,7 +17,7 @@ export default function Book() {
         {
             icon: EyeIcon,
             title: "Cover",
-            content: <div></div>,
+            content: cover(setCurr),
         },
         {
             icon: NameIcon,

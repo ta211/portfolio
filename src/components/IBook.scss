@@ -1,6 +1,7 @@
 $grey: #808080;
-$mid-gray: #C4C4C4;
+$mid-grey: #C4C4C4;
 $light-grey: #B8B8B8;
+$lighter-grey: #DADADA;
 
 .ibook-container {
     position: absolute;
@@ -38,14 +39,14 @@ $light-grey: #B8B8B8;
     background-color: white;
     
     .pageheader {
-        z-index: 10;
+        z-index: auto;
         width: 100%;
         height: 100%;
         .pagetitle {
             $height: 70px;
             $text-width: 0.6;
             position: absolute;
-            background-color: $mid-gray;
+            background-color: $mid-grey;
             display: flex;
             height: $height;
             width: 100% * (0.5 + $text-width / 2);
@@ -74,7 +75,8 @@ $light-grey: #B8B8B8;
     .pageheader.bookmark {
         .pagetitle {
             $height: 40px;
-            z-index: 1000;
+            z-index: 90;
+            background-color: $lighter-grey;
 
             &:hover {
                 .pagetitle-text {

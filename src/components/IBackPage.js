@@ -1,6 +1,6 @@
 import IPage from './IPage';
 
-function flipPage(index, curr, setCurr) {
+export function flipPage(index, curr, setCurr) {
     const dir_from = index < curr ? "left" : "right";
     const dir_to = index < curr ? "right" : "left";
     document.getElementById("ibook-spine").style.zIndex = 0;
