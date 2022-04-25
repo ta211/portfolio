@@ -1,0 +1,60 @@
+.project-left-container {
+    position: absolute;
+    margin: 70% 50px 0 20px;
+    font-family: "Monda", sans-serif;
+    cursor: pointer;
+
+    .project-row {
+        margin-bottom: 10px;
+        display: flex;
+
+        .project-pointer {
+            margin-right: 10px;
+        }
+        .project-title {
+            font-size: 18px;
+        }
+        .project-info {
+            font-size: 15px;
+        }
+
+        &-selected {
+            .project-pointer {
+                font-weight: bold;
+            }
+            .project-title {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.project-right-container {
+    display: none;
+    $margin: 20px;
+    height: 100%;
+    margin-left: 50px;
+
+    .project-img-container {
+        position: absolute;
+        display: grid;
+        height: 40%;
+        box-shadow: inset 0 0 4px 1px rgba(black, 0.5);
+        margin: $margin;
+
+        .project-img {
+            align-self: center;
+            justify-self: center;
+            max-width: 90%;
+            max-height: 90%;
+        }
+    }
+    .project-descrip-container {
+        font-family: "Monda", sans-serif;
+        font-size: 12px;
+        position: absolute;
+        margin-top: calc(40% + $margin * 5);
+        margin-left: $margin;
+        margin-right: $margin * 2;
+    }
+}
