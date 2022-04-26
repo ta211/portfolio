@@ -11,8 +11,13 @@ const aboutmeLeft =
     </div>
 </div>;
 
+const aboutmeRight = 
+<div className="aboutme-right-container">
+    <div></div>
+</div>
+
 const aboutme = {
     left: aboutmeLeft,
-    right: <div></div>
+    right: aboutmeRight
 }
 export default aboutme;
