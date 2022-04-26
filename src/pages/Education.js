@@ -1,6 +1,8 @@
 import './Education.scss';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+let updateOutside;
 
 function Course (id, name, instructor, units, content, stars, review) {
     this.id = id;
@@ -8,7 +10,7 @@ function Course (id, name, instructor, units, content, stars, review) {
     this.instructor = instructor;
     this.units = units;
     this.content = content;
-    this.stars = "★"*stars;
+    this.stars = "★".repeat(stars);
     this.review = review;
 }
 
@@ -97,7 +99,18 @@ const eduList = [
 
 function selectMajor(eduId, majorId) {
     const major = eduList[eduId].majors[majorId];
-    let rightContainer = document.getElementsByClassName("edu-right-container")[0];
+
+    let prevMajorContainer = document.getElementsByClassName("edu-major-selected")[0];
+    if (prevMajorContainer) {
+        prevMajorContainer.classList.remove("edu-major-selected");
+        prevMajorContainer.firstChild.textContent = "•";
+    }
+
+    let majorContainer = document.getElementById(`edu-${eduId}-major-${majorId}`);
+    majorContainer.classList.add("edu-major-selected");
+    majorContainer.firstChild.textContent = ">";
+
+    updateOutside(major);
 }
 
 function getEduSummary(edu, eduId) {    
@@ -114,8 +127,8 @@ function getEduSummary(edu, eduId) {
             {edu.majors.map((major, majorId) => 
             <div 
                 className="edu-major" 
-                id={`edu-major-${majorId}`} 
-                key={`edu-major-${majorId}`} 
+                id={`edu-${eduId}-major-${majorId}`} 
+                key={`edu-${eduId}-major-${majorId}`} 
                 onClick = {() => selectMajor(eduId, majorId)}
             >
                 <div className="edu-major-pointer">
@@ -134,6 +147,44 @@ function getEduSummary(edu, eduId) {
     );
 };
 
+function getCourseRow(course, index, selectedCourseId, selectCourseId) {
+    const isSelected = index == selectedCourseId;
+    return (
+        <div className={"course-row" + (isSelected ? " course-row-selected":"")}>
+            <div className="course-title" onClick={() => selectCourseId(index)}>
+                <div className="course-title-pointer">
+                    {isSelected ? ">" : "•"}
+                </div>
+                <div className="course-title-name">
+                    {course.id} {course.name}
+                </div>
+            </div>
+            {
+                index == selectedCourseId &&
+                <div className="course-info">
+                    <div className="course-instructor">
+                        Instructor: {course.instructor}
+                    </div>
+                    <div className="course-units">
+                        Course unit: {course.units} units
+                    </div>
+                    <div className="course-content">
+                        Course Content: {course.content}
+                    </div>
+                    <div className="course-review">
+                        <div className="course-rating">
+                            Review: {course.stars}
+                        </div>
+                        <div className="course-review-content">
+                            {course.review}
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    );
+}
+
 function EduLeft () {
     return (
         <div className="edu-left-container">
@@ -143,14 +194,29 @@ function EduLeft () {
 }
 
 function EduRight () {
+    const [major, updateMajor] = useState();
     const [courseId, setCourseId] = useState(null);
+
+    useEffect(() => {
+        /* Assign update to outside variable */
+        updateOutside = updateMajor
+        setCourseId(null);
+    
+        /* Unassign when component unmounts */
+        return () => updateOutside = null
+    }, [major])
+
+    if (!major) {
+        return <div />;
+    }
 
     return (
         <div className="edu-right-container">
             <div className="edu-major-name">
-                Whatever Courses
+                {major && major.name} Courses
             </div>
             <div className="edu-major-courses">
+                {major && major.courses.map((course, index) => getCourseRow(course, index, courseId, setCourseId))}
             </div>
         </div>
     )

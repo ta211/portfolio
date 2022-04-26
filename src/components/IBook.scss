@@ -110,6 +110,7 @@ $lighter-grey: #DADADA;
     margin-left: calc($margin * (var(--index) + 1));
     border-radius: 5px 0 0 5px;
     box-shadow: -2px 2px 2px 0px black;
+    overflow-y:auto
 }
 
 .rightpage {
@@ -119,6 +120,8 @@ $lighter-grey: #DADADA;
     margin-right: calc($margin * (var(--index) + 1));
     border-radius: 0 5px 5px 0;
     box-shadow: 2px 2px 2px 0px black, 0 1px 0 1px black;
+    // overflow-y:auto
+
     .pagetitle {
         right: 0;
     }

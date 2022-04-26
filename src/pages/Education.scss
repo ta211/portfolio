@@ -11,7 +11,7 @@
             .edu-major {
                 cursor: pointer;
                 display: flex;
-                font-size: 15px;
+                font-size: 18px;
                 .edu-major-name {
                     text-decoration: underline;
                 }
@@ -23,20 +23,46 @@
                 font-weight: bold;
             }
         }
+        .edu-info {
+            font-size: 18px;
+        }
     }
 }
 
 .edu-right-container {
-    display: none;
+    // display: none;
     $margin: 20px;
-    height: 100%;
-    margin-left: 50px;
+    height: auto;
+    margin: $margin*2 0;
+    margin-left: 50px + $margin;
+    margin-right: $margin;
     font-family: "Monda", sans-serif;
 
     .edu-major-name {
-        margin: $margin*2 $margin;
         font-size: 20px;
         font-weight: bold;
         text-decoration: underline;
+    }
+    .edu-major-courses {
+        margin-top: $margin;
+        .course-row {
+            .course-title {
+                cursor: pointer;
+                display: flex;
+                font-size: 18px;
+                &-pointer {
+                    margin: 0 10px;
+                }
+            }
+        }
+        .course-row-selected {
+            .course-title {
+                font-weight: bold;
+            }
+            .course-info {
+                font-size: 16px;
+                margin: 10px 30px 10px;
+            }
+        }
     }
 }
