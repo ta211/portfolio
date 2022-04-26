@@ -32,7 +32,9 @@
 .project-right-container {
     display: none;
     $margin: 20px;
-    height: 100%;
+    margin: $margin;
+    margin-left: 60px;
+    height: calc(100% - 2 * $margin);
 
     .project-img-container {
         position: absolute;
