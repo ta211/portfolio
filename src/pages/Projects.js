@@ -97,7 +97,7 @@ function getProjectSummary(project, index) {
 
 function ProjectLeft () {
     return (
-        <div className="project-left-container">
+        <div className="project-left-container container">
             {projectList.map((project, index) => getProjectSummary(project, index))}
         </div>
     );
@@ -105,11 +105,11 @@ function ProjectLeft () {
 
 function ProjectRight () {
     return (
-        <div className="project-right-container">
+        <div className="project-right-container container">
             <a className="project-img-container" href={defaultLink}>
                 <img className="project-img" src={defaultImg}/>
             </a>
-            <div className="project-descrip-container">
+            <div className="project-descrip-container container">
                 {defaultContent}
             </div>
         </div>

@@ -1,7 +1,7 @@
 import './AboutMe.scss'
 
 const aboutmeLeft = 
-<div className="aboutme-left-container">
+<div className="aboutme-left-container container">
     <div className="aboutme-intro">
         Hello! This is An Tang.
         <br/>

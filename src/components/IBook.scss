@@ -134,6 +134,12 @@ $lighter-grey: #DADADA;
         transform-style: preserve-3d;
         transform-origin: right;
         transform: rotateY(0deg);
+
+        .container {
+            position: absolute;
+            margin: 50% 50px 0 50px;
+            font-family: "Monda", sans-serif;
+        }
     }
     .rightpage {
         transition: transform $transition-time;

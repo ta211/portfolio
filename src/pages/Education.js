@@ -187,7 +187,7 @@ function getCourseRow(course, index, selectedCourseId, selectCourseId) {
 
 function EduLeft () {
     return (
-        <div className="edu-left-container">
+        <div className="edu-left-container container">
             {eduList.map((edu, index) => getEduSummary(edu, index))}
         </div>
     );
@@ -211,7 +211,7 @@ function EduRight () {
     }
 
     return (
-        <div className="edu-right-container">
+        <div className="edu-right-container container">
             <div className="edu-major-name">
                 {major && major.name} Courses
             </div>
