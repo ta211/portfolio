@@ -1,4 +1,5 @@
 import IBook from '../components/IBook';
+import INote from '../components/INote';
 
 import EyeIcon from '../icons/eye.svg';
 import NameIcon from '../icons/name-icon.svg';
@@ -14,7 +15,15 @@ import projects from './Projects';
 import contact from './Contact';
 import fun from './Fun';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
 
 function Page(icon, title, content) {
     this.icon = icon;
@@ -23,6 +32,17 @@ function Page(icon, title, content) {
 }
 
 export default function Book() {
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  
+    useEffect(() => {
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
+  
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const [curr, setCurr] = useState(0);
     const pages = [
         new Page(EyeIcon, "Cover", cover(setCurr)),
@@ -32,8 +52,13 @@ export default function Book() {
         new Page(PPlaneIcon, "Contact", contact),
         new Page(SunIcon, "Fun", fun)
     ];
+
+    if (windowDimensions.width / windowDimensions.height > 1.4) {
+        return <IBook curr={curr} setCurr={setCurr} pages={pages}>
+        </IBook>;
+    }
     return (
-        <IBook curr={curr} setCurr={setCurr} pages={pages}>
-        </IBook>
+        <INote curr={curr} setCurr={setCurr} pages={pages}>
+        </INote>
     );
 }

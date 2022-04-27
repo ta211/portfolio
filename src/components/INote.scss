@@ -1,0 +1,117 @@
+$grey: #808080;
+$mid-grey: #C4C4C4;
+$light-grey: #B8B8B8;
+$lighter-grey: #DADADA;
+$lightest-grey: #E5E5E5;
+
+.inote-container {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+
+    $width: 15px;
+    // box-shadow: inset 0px 0px 0px $width $grey;
+    background-color: white;
+
+    .inote-spine {
+        z-index: 100;
+        position: fixed;
+        top: 0;
+        height: $width;
+        width: calc(100% + $width);
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: $light-grey;
+        display: flex;
+
+        * {
+            position: fixed;
+            top: 0;
+            width: $width;
+            height: 50px;
+            border-radius: $width;
+            background-color: $light-grey;
+        }
+        &-1 {
+            margin-left: calc(16.67% - $width/2);
+        }
+        &-2 {
+            margin-left: calc(33.33% - $width/2);
+        }
+        &-3 {
+            margin-left: calc(50% - $width/2);
+        }
+        &-4 {
+            margin-left: calc(66.67% - $width/2);
+        }
+        &-5 {
+            margin-left: calc(83.33% - $width/2);
+        }
+    }
+
+    .inote-navbar {
+        width: 100%;
+        .inote-menu {
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            min-height: 100%;
+            width: 83.33%;
+            background-color: transparent;
+            padding-top: 50px;
+
+            &-item {
+                min-height: 50px;
+                margin-bottom: 15px;
+                display: flex;
+
+                .inote-title {
+                    font-family: 'Monda', sans-serif;
+                    font-size: 20px;
+                    align-self: center;
+                    margin-left: 20px;
+                }
+                .inote-icon {
+                    z-index: 2;
+                    position: inherit;
+                    margin-left: 10%;
+                    width: 20%;
+                    height: min-content;
+                    
+                    img {
+                        align-self: center;
+                        justify-self: center;
+                        margin: 25%;
+                        width: 50%;
+                        height: auto;
+                        object-fit: contain;display: block;
+                    }
+                }
+            }
+            &-item-selected {
+                .inote-icon {
+                    border-radius: 50%;
+                    box-shadow: inset 0px 0px 0px 1px $grey;
+                    background-color: white;
+                }
+                .inote-title {
+                    font-size: 30px;
+                    font-weight: bold;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .inote-menu-open {
+            background-color: $lightest-grey;
+            .inote-menu-item {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .inote-button {
+        cursor: pointer;
+    }
+
+    .inote-curr-page {}
+}
