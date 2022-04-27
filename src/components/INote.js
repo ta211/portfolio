@@ -22,7 +22,7 @@ function IMenu({curr, setCurr, pages}) {
             >
                 <div className="inote-icon" 
                 onClick={() => setOpen(true)}>
-                    <img src={pages[curr].icon}/>
+                    <img src={pages[curr].icon} alt="open navigation bar"/>
                 </div>
             </div>
         );
@@ -42,7 +42,7 @@ function IMenu({curr, setCurr, pages}) {
                 onClick={() => changePage(index)}
             >
                 <div className="inote-icon">
-                    <img src={p.icon}/>
+                    <img src={p.icon} alt={"Link to " + p.title}/>
                 </div>
                 <div className="inote-title">
                     {p.title}
@@ -66,7 +66,7 @@ function IMenu({curr, setCurr, pages}) {
 }
 
 export default function INote({curr, setCurr, pages}) {
-    const length = pages.length;
+    let page = pages[curr];
 
     return (
         <div className="inote-container">
@@ -109,9 +109,16 @@ export default function INote({curr, setCurr, pages}) {
                     ).reverse()}
                 </div>
             </div> */}
+            {curr == 0 || <div className="pageheader">
+                <div className="pagetitle">
+                    <h2 className="pagetitle-text">
+                        {page.title}
+                    </h2>
+                </div>
+            </div>}
             <div className="inote-curr-page">
-                {pages[curr].content.left}
-                {pages[curr].content.right}
+                {page.content.left}
+                {page.content.right}
             </div>
         </div>
     )

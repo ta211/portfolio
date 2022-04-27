@@ -54,7 +54,7 @@ const FunList = [
 const getFunRow = (fun, index) => {
     const img = 
     <a className="fun-img-container" href={fun.link}>
-        <img className={`fun-img fun-img-${index}`} src={fun.img}/>
+        <img className={`fun-img fun-img-${index}`} src={fun.img} alt={"Link to " + fun.name}/>
     </a>;
 
     const description = 
@@ -72,14 +72,20 @@ const getFunRow = (fun, index) => {
     
     if (index % 2 == 0) {
         return (
-            <div className={"fun-row fun-"+index}>
+            <div 
+                className={"fun-row fun-"+index}
+                key={"fun-row fun-"+index}
+            >
                 {img}
                 {description}
             </div>
         );
     } else {
         return (
-            <div className={"fun-row fun-"+index}>
+            <div 
+                className={"fun-row fun-"+index}
+                key={"fun-row fun-"+index}
+            >
                 {description}
                 {img}
             </div>

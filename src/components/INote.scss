@@ -49,6 +49,7 @@ $lightest-grey: #E5E5E5;
     }
 
     .inote-navbar {
+        z-index: 1;
         width: 100%;
         .inote-menu {
             position: fixed;
@@ -157,6 +158,24 @@ $lightest-grey: #E5E5E5;
                 .fun-description {
                     width: 100%;
                 }
+            }
+        }
+    }
+
+    .pageheader {
+        z-index: -1;
+        position: absolute;
+        right: 0;
+        top: 60px;
+
+        .pagetitle {
+            background: $mid-grey;
+            width: fit-content;
+            border-radius: 5px 0 0 5px;
+
+            &-text {
+                margin: 0 10px;
+                font-size: 30px;
             }
         }
     }

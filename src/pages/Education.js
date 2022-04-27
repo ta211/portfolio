@@ -150,7 +150,10 @@ function getEduSummary(edu, eduId) {
 function getCourseRow(course, index, selectedCourseId, selectCourseId) {
     const isSelected = index == selectedCourseId;
     return (
-        <div className={"course-row" + (isSelected ? " course-row-selected":"")}>
+        <div 
+            className={"course-row" + (isSelected ? " course-row-selected":"")}
+            key={`course-row-${index}`}
+        >
             <div className="course-title" onClick={() => selectCourseId(index)}>
                 <div className="course-title-pointer">
                     {isSelected ? ">" : "•"}
