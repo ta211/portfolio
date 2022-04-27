@@ -1,12 +1,10 @@
 .project-left-container {
-    position: absolute;
-    margin: 50% 50px 0 50px;
     font-family: "Monda", sans-serif;
-    cursor: pointer;
 
     .project-row {
         margin-bottom: 10px;
         display: flex;
+        cursor: pointer;
 
         .project-pointer {
             margin-right: 10px;

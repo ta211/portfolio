@@ -105,11 +105,11 @@ function ProjectLeft () {
 
 function ProjectRight () {
     return (
-        <div className="project-right-container container">
+        <div className="project-right-container">
             <a className="project-img-container" href={defaultLink}>
                 <img className="project-img" src={defaultImg}/>
             </a>
-            <div className="project-descrip-container container">
+            <div className="project-descrip-container">
                 {defaultContent}
             </div>
         </div>

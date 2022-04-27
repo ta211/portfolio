@@ -7,8 +7,9 @@
     .fun-row {
         $inner-margin: 10px;
         display: flex;
-        height: 33.33%;
-        width: 100%;
+        padding: $inner-margin;
+        height: calc(33.33% - 2 * $inner-margin);
+        width: calc(100% - 2 * $inner-margin);
         .fun-img-container {
             width: 40%;
             .fun-img {

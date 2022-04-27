@@ -5,7 +5,7 @@ $lighter-grey: #DADADA;
 $lightest-grey: #E5E5E5;
 
 .inote-container {
-    position: absolute;
+    // position: absolute;
     width: 100%;
     min-height: 100%;
 
@@ -20,7 +20,6 @@ $lightest-grey: #E5E5E5;
         height: $width;
         width: calc(100% + $width);
         overflow-x: hidden;
-        overflow-y: auto;
         background-color: $light-grey;
         display: flex;
 
@@ -52,7 +51,6 @@ $lightest-grey: #E5E5E5;
     .inote-navbar {
         width: 100%;
         .inote-menu {
-            z-index: 1;
             position: fixed;
             top: 0;
             min-height: 100%;
@@ -81,9 +79,10 @@ $lightest-grey: #E5E5E5;
                     img {
                         align-self: center;
                         justify-self: center;
-                        margin: 25%;
-                        width: 50%;
+                        margin: 10%;
+                        width: 80%;
                         height: auto;
+                        max-height: 70px;
                         object-fit: contain;display: block;
                     }
                 }
@@ -102,6 +101,7 @@ $lightest-grey: #E5E5E5;
             }
         }
         .inote-menu-open {
+            z-index: 1;
             background-color: $lightest-grey;
             .inote-menu-item {
                 cursor: pointer;
@@ -113,5 +113,51 @@ $lightest-grey: #E5E5E5;
         cursor: pointer;
     }
 
-    .inote-curr-page {}
+    .inote-curr-page {
+        top: 125px;
+        bottom:0;
+        position:fixed;
+        overflow-y:scroll;
+        overflow-x:hidden;
+        width: 100%;
+
+        .aboutme-intro {
+            margin-left: 10px;
+        }
+
+        .edu-left-container {
+            margin: 0 10px;
+            align-items: center;
+        }
+
+        .project-left-container {
+            margin: 0 10px;
+            align-items: center;
+        }
+
+        .project-right-container {
+            margin-left: 20px;
+            align-items: center;
+            .project-descrip-container {
+                height: fit-content;
+            }
+        }
+
+        .contact-left-container {
+            text-align: center;
+        }
+
+        .fun-right-container {
+            $fun-margin: 10px;
+            margin: 0 $fun-margin;
+            height: fit-content;
+            width: calc(100% - 2 * $fun-margin);
+            .fun-row {
+                height: auto;
+                .fun-description {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
