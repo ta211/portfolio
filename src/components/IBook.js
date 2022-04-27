@@ -8,14 +8,15 @@ import EyeIcon from '../icons/eye.svg';
 function LeftPageCurr({icon, title, children, index}) {
     return (
         <IPage index={index} left={true}>
-            {index == 0 || (<div className="pageheader">
+            {index == 0 || (
+            <div className="pageheader">
                 <div className="pagetitle">
-                    <img src={icon} className="pagetitle-icon"/>
-                    <div className="pagetitle-text">
+                    <img src={icon} className="pagetitle-icon" alt=""/>
+                    <h2 className="pagetitle-text">
                         {title}
-                    </div>
+                    </h2>
                 </div>
-                <img src={EyeIcon} className="pagelogo"/>
+                <img src={EyeIcon} className="pagelogo" alt=""/>
             </div>)}
             {children}
         </IPage>

@@ -27,25 +27,26 @@ export default function IBackPage({icon, title, index, left, length, curr, setCu
     }
     const pagetitle_inner = left ? (
         <>
-            <img src={icon} className="pagetitle-icon" /><div className="pagetitle-text">
+            <img src={icon} className="pagetitle-icon" alt={title + " icon"}/>
+            <h4 className="pagetitle-text">
                 {title}
-            </div>
+            </h4>
         </>
     ) : (
         <>
-            <div className="pagetitle-text">
+            <h4 className="pagetitle-text">
                 {title}
-            </div>
-            <img src={icon} className="pagetitle-icon"/>
+            </h4>
+            <img src={icon} className="pagetitle-icon" alt={title + " icon"}/>
         </>
     );
     return (
         <IPage index={index} left={left} length={length}>
-            <div className="pageheader bookmark">
+            <nav className="pageheader bookmark">
                 <div className="pagetitle" onClick={onClick}>
                     {pagetitle_inner}
                 </div>
-            </div>
+            </nav>
         </IPage>
     )
 }

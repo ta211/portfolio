@@ -1,3 +1,5 @@
+import './Book.scss';
+
 import IBook from '../components/IBook';
 import INote from '../components/INote';
 

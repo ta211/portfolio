@@ -20,7 +20,7 @@ function Project(name, link, role, duration, location, img) {
 
 const Mentra2020 = new Project(
     "Mentra", 
-    "mentra.me",
+    "https://mentra.me",
     "Front-End Engineer Intern",
     "Jun 2020 - Aug 2020",
     "Remote",
@@ -68,6 +68,7 @@ function selectProject(projectId) {
     rightIMG.setAttribute("href", project.link ?? defaultLink);
 
     rightIMG.firstChild.setAttribute("src", project.img ?? defaultImg);
+    rightIMG.firstChild.setAttribute("alt", project.img ? "Image coming soon!" : `Link to ${project.name}`);
 
     rightPage.style.display = "block";
 }
@@ -84,9 +85,9 @@ function getProjectSummary(project, index) {
             •
         </div>
         <div className="project-overview">
-            <div className="project-title" key={index}>
+            <h4 className="project-title" key={index}>
                 {project.name} | {project.role}
-            </div>
+            </h4>
             <div className="project-info">
                 {project.duration} | {project.location}
             </div>
@@ -107,7 +108,7 @@ function ProjectRight () {
     return (
         <div className="project-right-container">
             <a className="project-img-container" href={defaultLink}>
-                <img className="project-img" src={defaultImg}/>
+                <img className="project-img" src={defaultImg} alt={`Link to project`}/>
             </a>
             <div className="project-descrip-container">
                 {defaultContent}

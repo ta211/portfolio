@@ -2,12 +2,12 @@ import './Contact.scss';
 
 const contactLeft = 
 <div className="contact-left-container container">
-    <div className="contact-email">
+    <h4 className="contact-email">
         Email: atang1@andrew.cmu.edu
-    </div>
-    <div className="contact-github">
+    </h4>
+    <h4 className="contact-github">
         <a href="https://github.com/ta211">Github</a>
-    </div>
+    </h4>
 </div>
 
 const contact = {

@@ -120,9 +120,9 @@ function getEduSummary(edu, eduId) {
         id={`edu-${eduId}`} 
         key={`edu-${eduId}`} 
     >
-        <div className="edu-title">
+        <h4 className="edu-title">
             {edu.degree} at <b>{edu.school}</b>
-        </div>
+        </h4>
         <div className="edu-majors">
             {edu.majors.map((major, majorId) => 
             <div 
@@ -134,9 +134,9 @@ function getEduSummary(edu, eduId) {
                 <div className="edu-major-pointer">
                     •
                 </div>
-                <div className="edu-major-name">
+                <h4 className="edu-major-name">
                     {major.name}
-                </div>
+                </h4>
             </div>
             )}
         </div>
@@ -155,9 +155,9 @@ function getCourseRow(course, index, selectedCourseId, selectCourseId) {
                 <div className="course-title-pointer">
                     {isSelected ? ">" : "•"}
                 </div>
-                <div className="course-title-name">
+                <h5 className="course-title-name">
                     {course.id} {course.name}
-                </div>
+                </h5>
             </div>
             {
                 index == selectedCourseId &&
@@ -212,9 +212,9 @@ function EduRight () {
 
     return (
         <div className="edu-right-container container">
-            <div className="edu-major-name">
+            <h4 className="edu-major-name">
                 {major && major.name} Courses
-            </div>
+            </h4>
             <div className="edu-major-courses">
                 {major && major.courses.map((course, index) => getCourseRow(course, index, courseId, setCourseId))}
             </div>

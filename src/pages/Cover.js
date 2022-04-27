@@ -6,18 +6,18 @@ import EyeIcon from '../icons/eye.svg';
 
 const coverleft = (
     <div className="cover-left-container">
-        <div className="cover-greeting">Hello!</div>
+        <h1 className="cover-greeting">Hello!</h1>
         <div className="cover-message">
-            <p>Welcome to my portfolio.</p>
-            <p>Click on the button to start your journey!</p>
+            <h3>Welcome to my portfolio.</h3>
+            <h3>Click on the button to start your journey!</h3>
         </div>
-        <div className="cover-signature">An.</div>
+        <h1 className="cover-signature">An.</h1>
     </div>
 );
 
 const coverright = (setCurr) => (
     <div className="cover-right-container">
-        <img src={EyeIcon} className="cover-icon"/>
+        <img src={EyeIcon} className="cover-icon" alt="An eye shape is staring at you on the cover of the bookfolio, which is also the website's logo."/>
         <div className="cover-button" onClick={() => flipPage(1, 0, setCurr)}>
             <div className="cover-button-ripple"/>
         </div>
