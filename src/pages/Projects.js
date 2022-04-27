@@ -81,16 +81,16 @@ function getProjectSummary(project, index) {
         key={`project-${index}`} 
         onClick={() => selectProject(index)}
     >
-        <div className="project-pointer">
-            •
-        </div>
-        <div className="project-overview">
+        <button className="project-overview">
+            <div className="project-pointer">
+                •
+            </div>
             <h4 className="project-title" key={index}>
                 {project.name} | {project.role}
             </h4>
-            <div className="project-info">
-                {project.duration} | {project.location}
-            </div>
+        </button>
+        <div className="project-info">
+            {project.duration} | {project.location}
         </div>
     </div>
     );

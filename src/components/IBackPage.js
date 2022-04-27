@@ -43,9 +43,13 @@ export default function IBackPage({icon, title, index, left, length, curr, setCu
     return (
         <IPage index={index} left={left} length={length}>
             <nav className="pageheader bookmark">
-                <div className="pagetitle" onClick={onClick}>
+                <button 
+                    className="pagetitle"
+                    onClick={onClick} 
+                    tabIndex={index+1}
+                >
                     {pagetitle_inner}
-                </div>
+                </button>
             </nav>
         </IPage>
     )

@@ -3,15 +3,17 @@
 
     .project-row {
         margin-bottom: 10px;
-        display: flex;
-        cursor: pointer;
 
-        .project-pointer {
-            margin-right: 10px;
-        }
-        .project-title {
+        .project-overview {
+            display: flex;
+            cursor: pointer;
             font-size: 20px;
+            text-align: left;
+            .project-pointer {
+                margin-right: 10px;
+            }
         }
+
         .project-info {
             font-size: 16px;
         }

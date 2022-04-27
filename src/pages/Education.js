@@ -125,7 +125,7 @@ function getEduSummary(edu, eduId) {
         </h4>
         <div className="edu-majors">
             {edu.majors.map((major, majorId) => 
-            <div 
+            <button 
                 className="edu-major" 
                 id={`edu-${eduId}-major-${majorId}`} 
                 key={`edu-${eduId}-major-${majorId}`} 
@@ -137,7 +137,7 @@ function getEduSummary(edu, eduId) {
                 <h4 className="edu-major-name">
                     {major.name}
                 </h4>
-            </div>
+            </button>
             )}
         </div>
         <div className="edu-info">
@@ -154,14 +154,14 @@ function getCourseRow(course, index, selectedCourseId, selectCourseId) {
             className={"course-row" + (isSelected ? " course-row-selected":"")}
             key={`course-row-${index}`}
         >
-            <div className="course-title" onClick={() => selectCourseId(index)}>
+            <button className="course-title" onClick={() => selectCourseId(index)}>
                 <div className="course-title-pointer">
                     {isSelected ? ">" : "•"}
                 </div>
                 <h5 className="course-title-name">
                     {course.id} {course.name}
                 </h5>
-            </div>
+            </button>
             {
                 index == selectedCourseId &&
                 <div className="course-info">

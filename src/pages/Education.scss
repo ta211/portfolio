@@ -8,7 +8,7 @@
                 cursor: pointer;
                 display: flex;
                 font-size: 18px;
-                margin: 10px 0;
+                margin: 5px 0 0 5px;
                 .edu-major-name {
                     text-decoration: underline;
                 }
@@ -21,6 +21,7 @@
             }
         }
         .edu-info {
+            margin-top: 5px;
             font-size: 18px;
         }
     }
@@ -42,6 +43,7 @@
     .edu-major-courses {
         margin-top: $margin;
         .course-row {
+            margin-bottom: 5px;
             .course-title {
                 cursor: pointer;
                 display: flex;

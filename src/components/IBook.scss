@@ -78,7 +78,7 @@ $lighter-grey: #DADADA;
             z-index: 90;
             background-color: $lighter-grey;
 
-            &:hover {
+            &:hover, &:focus {
                 .pagetitle-text {
                     display: block;
                     font-size: $height - 20px;
