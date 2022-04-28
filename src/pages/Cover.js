@@ -18,7 +18,7 @@ const coverleft = (
 const coverright = (setCurr) => (
     <div className="cover-right-container">
         <img src={EyeIcon} className="cover-icon" alt="An eye shape is staring at you on the cover of the bookfolio, which is also the website's logo."/>
-        <button className="cover-button" onClick={() => flipPage(1, 0, setCurr)}>
+        <button className="cover-button" onClick={() => flipPage(1, 0, setCurr)} aria-label="Click to opne my bookfolio">
             <div className="cover-button-ripple"/>
         </button>
     </div>
