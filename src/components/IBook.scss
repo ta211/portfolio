@@ -4,6 +4,7 @@ $light-grey: #B8B8B8;
 $lighter-grey: #DADADA;
 
 .ibook-container {
+    transform: rotate(2deg) translateY(-5px);
     position: absolute;
     height: 100%;
     width: 100%;
