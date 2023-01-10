@@ -11,12 +11,12 @@ function LeftPageCurr({icon, title, children, index}) {
             {index == 0 || (
             <div className="pageheader">
                 <div className="pagetitle">
-                    <img src={icon} className="pagetitle-icon" alt=""/>
-                    <h2 className="pagetitle-text">
+                    {/* <img src={icon} className="pagetitle-icon" alt=""/> */}
+                    <div className="pagetitle-text">
                         {title}
-                    </h2>
+                    </div>
                 </div>
-                <img src={EyeIcon} className="pagelogo" alt=""/>
+                {/* <img src={EyeIcon} className="pagelogo" alt=""/> */}
             </div>)}
             {children}
         </IPage>
@@ -37,12 +37,12 @@ export default function IBook({curr, setCurr, pages}) {
     return (
         <div className="ibook-container">
             <div className="ibook-spine" id="ibook-spine">
-                <div className="ibook-spine-1" />
+                {/* <div className="ibook-spine-1" />
                 <div className="ibook-spine-2" />
                 <div className="ibook-spine-3" />
                 <div className="ibook-spine-4" />
                 <div className="ibook-spine-5" />
-                <div className="ibook-spine-6" />
+                <div className="ibook-spine-6" /> */}
             </div>
             <div className="ibook-back-pages">
                 <div className="ibook-left-pages">

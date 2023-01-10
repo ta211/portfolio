@@ -12,6 +12,7 @@ import SunIcon from '../icons/sun-icon.svg';
 
 import cover from './Cover';
 import aboutme from './AboutMe';
+import preface from './Preface';
 import education from './Education';
 import projects from './Projects';
 import contact from './Contact';
@@ -48,11 +49,12 @@ export default function Book() {
     const [curr, setCurr] = useState(0);
     const pages = [
         new Page(EyeIcon, "Cover", cover(setCurr)),
-        new Page(NameIcon, "About Me", aboutme),
-        new Page(BookIcon, "Education", education),
+        new Page(NameIcon, "Preface", preface),
+        // new Page(NameIcon, "About Me", aboutme),
+        // new Page(BookIcon, "Education", education),
         new Page(LinkIcon, "Projects", projects),
         new Page(PPlaneIcon, "Contact", contact),
-        new Page(SunIcon, "Fun", fun)
+        // new Page(SunIcon, "Fun", fun)
     ];
 
     if (windowDimensions.width / windowDimensions.height > 1.4) {

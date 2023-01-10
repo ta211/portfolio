@@ -8,8 +8,8 @@ $lighter-grey: #DADADA;
     position: absolute;
     height: 100%;
     width: 100%;
-    box-shadow: inset 0px 0px 0px 15px $grey;
-    background-color: white;
+    // box-shadow: inset 0px 0px 0px 15px $grey;
+    // background-color: white;
 }
 
 .ibook-spine {
@@ -20,24 +20,24 @@ $lighter-grey: #DADADA;
     left: calc(50% - $width/2);
     width: $width;
     height: calc(100% + $width);
-    background-color: $light-grey;
+    background-color: #450025;
     display: grid;
-    * {
-        position: relative;
-        left: -50px + $width/2;
-        width: 100px;
-        height: $width;
-        border-radius: $width;
-        background-color: $light-grey;
-    }
+    // * {
+    //     position: relative;
+    //     left: -50px + $width/2;
+    //     width: 100px;
+    //     height: $width;
+    //     border-radius: $width;
+    //     background-color: $light-grey;
+    // }
 }
 
 .page {
-    $margin: 15px;
+    $margin: 0px;
     margin: $margin 0 $margin 0;
     position: absolute;
     height: calc(100% - 2 * $margin);
-    background-color: white;
+    // background-color: white;
     
     .pageheader {
         z-index: auto;
@@ -59,9 +59,9 @@ $lighter-grey: #DADADA;
                 margin-right: -5%;
             }
             &-text {
-                font-family: 'Monda', sans-serif;
-                font-size: $height - 30px;
-                font-weight: bold;
+                font-family: 'Love Ya Like A Sister', cursive;
+                font-size: $height + 20px;
+                // font-weight: bold;
                 width: 100% * ($text-width / (0.5 + $text-width / 2));
                 text-align: center;
                 align-self: center;
@@ -136,6 +136,16 @@ $lighter-grey: #DADADA;
         transform-origin: right;
         transform: rotateY(0deg);
 
+        .pagetitle {
+            height: 50px;
+            margin-left: calc(20%);
+            .pagetitle-text {
+                mix-blend-mode: multiply;
+                position: absolute;
+                bottom: -20px;
+            }
+        }
+
         .container {
             position: absolute;
             margin: 50% 50px 0 50px;
@@ -170,4 +180,63 @@ $lighter-grey: #DADADA;
         transition: transform $transition-time;
         transform: rotateY(-90deg);
     }
+}
+
+.page-0 {
+    background: #FFF6DF;
+}
+
+.page-0.rightpage {
+    background: #CFA8D9;
+}
+
+.page-1 { // Preface
+    background: #FF008A;
+    .pageheader .pagetitle {
+        background: #FF008A;
+        .pagetitle-text {
+            color: #2FEA00;
+        }
+    }
+    .preface-left-container .preface-arrow {
+        height: 50px;
+        width: 80%;
+        background: #FF008A;
+        position: fixed;
+        margin-left: calc(20% - 50px);
+        margin-top: calc(-20% - 35px);
+        transform: rotate(-2deg);
+        transform-origin: left;
+        z-index: -1;
+    }
+    .preface-right-container {
+        .preface-arrow {
+            height: 50px;
+            width: 50%;
+            background: #FF008A;
+            position: fixed;
+            margin-top: calc(30% - 50px);
+            transform: rotate(-2deg);
+            transform-origin: left;
+            z-index: -1;
+        }
+        .preface-arrow-lower {
+            height: 50px;
+            width: 50%;
+            background: #FF008A;
+            position: fixed;
+            margin-top: calc(30% - (50px + var(--offset)));
+            transform: rotate(0);
+            transform-origin: left;
+            z-index: -1;
+        }
+    }
+}
+
+.page-2 {
+    background: #FF6060;
+}
+
+.page-3 {
+    background: #450025;
 }

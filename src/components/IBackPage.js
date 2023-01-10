@@ -1,4 +1,5 @@
 import IPage from './IPage';
+import {colors} from './Constants';
 
 export function flipPage(index, curr, setCurr) {
     const dir_from = index < curr ? "left" : "right";
@@ -18,6 +19,16 @@ export function flipPage(index, curr, setCurr) {
         }, 500);
     } else {
         setCurr(index);
+    }
+    let thisColor = colors[Object.keys(colors)[index]];
+    document.getElementsByTagName("body")[0].style.background = thisColor["background"];
+    document.getElementById("ibook-spine").style.background = thisColor["spine"];
+    document.getElementById("ibook-curr-left").children[0].style.backgroundColor = thisColor["left"];
+    document.getElementById("ibook-curr-right").children[0].style.backgroundColor = thisColor["right"];
+    if (index == 1) {
+        let offset = document.getElementById("ibook-curr-left").clientWidth * 0.8 * Math.sin(2 * Math.PI / 180);
+        document.getElementById("ibook-curr-left").style.setProperty('--offset', offset);
+        console.log(document.documentElement.style);
     }
 }
 
