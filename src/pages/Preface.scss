@@ -1,12 +1,10 @@
-$light-grey: #E5E5E5;
-$grey: #B8B8B8;
-
-.aboutme-left-container {
-    .aboutme-intro {
-        margin: 10px 10px 10px 0;
-        background: $light-grey;
-        border: solid 10px $grey;
-        border-radius: 15px;
-        padding: 15px;
+.preface-right-container {
+    .education {
+        padding: calc(60% + 50px) 50px 50px 50px;
+        // font-family: 'Love Ya Like A Sister', cursive;
+        font-size: 20px;
+        ul {
+            margin: 0;
+        }
     }
 }

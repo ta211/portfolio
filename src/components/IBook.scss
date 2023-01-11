@@ -3,6 +3,10 @@ $mid-grey: #C4C4C4;
 $light-grey: #B8B8B8;
 $lighter-grey: #DADADA;
 
+.link {
+    text-decoration: underline;
+}
+
 .ibook-container {
     transform: rotate(2deg) translateY(-5px);
     position: absolute;
@@ -215,7 +219,7 @@ $lighter-grey: #DADADA;
             width: 50%;
             background: #FF008A;
             position: fixed;
-            margin-top: calc(30% - 50px);
+            margin-top: calc(30% - 45px);
             transform: rotate(-2deg);
             transform-origin: left;
             z-index: -1;
@@ -225,7 +229,7 @@ $lighter-grey: #DADADA;
             width: 50%;
             background: #FF008A;
             position: fixed;
-            margin-top: calc(30% - (50px + var(--offset)));
+            margin-top: calc(30% - 30px);
             transform: rotate(0);
             transform-origin: left;
             z-index: -1;
