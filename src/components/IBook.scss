@@ -115,7 +115,8 @@ $lighter-grey: #DADADA;
     margin-left: calc($margin * (var(--index) + 1));
     border-radius: 5px 0 0 5px;
     box-shadow: -2px 2px 2px 0px black;
-    overflow-y:auto
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .rightpage {
@@ -200,39 +201,6 @@ $lighter-grey: #DADADA;
         .pagetitle-text {
             color: #2FEA00;
             mix-blend-mode: multiply;
-        }
-    }
-    .preface-left-container .preface-arrow {
-        height: 50px;
-        width: 80%;
-        background: #FF008A;
-        position: fixed;
-        margin-left: calc(20% - 50px);
-        margin-top: calc(-20% - 35px);
-        transform: rotate(-2deg);
-        transform-origin: left;
-        z-index: -1;
-    }
-    .preface-right-container {
-        .preface-arrow {
-            height: 50px;
-            width: 50%;
-            background: #FF008A;
-            position: fixed;
-            margin-top: calc(30% - 45px);
-            transform: rotate(-2deg);
-            transform-origin: left;
-            z-index: -1;
-        }
-        .preface-arrow-lower {
-            height: 50px;
-            width: 50%;
-            background: #FF008A;
-            position: fixed;
-            margin-top: calc(30% - 30px);
-            transform: rotate(0);
-            transform-origin: left;
-            z-index: -1;
         }
     }
 }
