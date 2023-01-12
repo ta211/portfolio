@@ -144,7 +144,6 @@ $lighter-grey: #DADADA;
             height: 50px;
             margin-left: calc(20%);
             .pagetitle-text {
-                mix-blend-mode: multiply;
                 position: absolute;
                 bottom: -20px;
             }
@@ -200,6 +199,7 @@ $lighter-grey: #DADADA;
         background: #FF008A;
         .pagetitle-text {
             color: #2FEA00;
+            mix-blend-mode: multiply;
         }
     }
     .preface-left-container .preface-arrow {
@@ -239,8 +239,21 @@ $lighter-grey: #DADADA;
 
 .page-2 {
     background: #FF6060;
+    .pageheader .pagetitle {
+        background: #AD00FF;
+        .pagetitle-text {
+            mix-blend-mode: screen;
+            color: #60F3BD;
+        }
+    }
 }
 
 .page-3 {
     background: #450025;
+    .pageheader .pagetitle {
+        background: white;
+        .pagetitle-text {
+            color: black;
+        }
+    }
 }
