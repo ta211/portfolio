@@ -1,5 +1,6 @@
 import './Projects.scss';
 import defaultImg from '../icons/image_NA.png';
+// Import project logos
 
 const defaultContent = 
 <>
@@ -188,6 +189,18 @@ function selectProjectList(index) {
     selected.classList.add(selectedClassName);
 
     // Update right page
+    
+    // let project = projectList[projectId];
+    
+    let rightPage = document.getElementsByClassName("project-right-container")[0];
+    // let rightIMG = rightPage.getElementsByClassName("project-img-container")[0];
+
+    // rightIMG.setAttribute("href", project.link ?? defaultLink);
+
+    // rightIMG.firstChild.setAttribute("src", project.img ?? defaultImg);
+    // rightIMG.firstChild.setAttribute("alt", project.img ? "Image coming soon!" : `Link to ${project.name}`);
+
+    // rightPage.style.display = "block";
 }
 
 const projects = {
@@ -197,6 +210,20 @@ const projects = {
             {projectLists.map((list, index) => <ProjectListCard list={list} index={index} />)}
         </div>
     </div>,
-    right: <ProjectRight />
+    right: 
+    <div class="project-right-container container">
+        <div class="column-wrapper">
+            <div class="column left-column">
+                <div class="project-overview"></div>
+                <div class="project-gap"></div>
+                <div class="project-overview"></div>
+            </div>
+            <div class="column right-column">
+                <div class="project-gap"></div>
+                <div class="project-overview"></div>
+                <div class="project-gap"></div>
+            </div>
+        </div>
+    </div>
 }
 export default projects;
