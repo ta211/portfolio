@@ -124,13 +124,20 @@
         .column {
             margin-right: 25px;
             flex: 50%;
+            width: calc(50% - 25px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        .project-overview {
+        .empty-logo-card {
             padding-top: 100%;
             background: black;
+        }
+        .project-logo-card {
+            .project-logo {
+                width: 100%;
+                display: block;
+            }
         }
         .project-gap {
             background: #FF6060;
