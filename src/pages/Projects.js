@@ -161,6 +161,7 @@ function ProjectListCard({list, index}) {
             className="project-title-card"
             id={`project-title-card-${index}`}
             key={`project-title-card-${index}`}
+            onClick={() => selectProjectList(index)}
         >
             <div className="project-titles-wrapper">
                 <div className="project-title">{list.title}</div>
@@ -173,6 +174,20 @@ function ProjectListCard({list, index}) {
             </div>
         </div>
     )
+}
+
+
+function selectProjectList(index) {
+    const selectedClassName = "project-title-card-selected";
+    let prevSelected = document.getElementsByClassName(selectedClassName)[0];
+    if (prevSelected) {
+        prevSelected.classList.remove(selectedClassName);
+    }
+
+    let selected = document.getElementById(`project-title-card-${index}`);
+    selected.classList.add(selectedClassName);
+
+    // Update right page
 }
 
 const projects = {

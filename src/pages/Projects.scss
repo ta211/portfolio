@@ -42,6 +42,9 @@
             background: #60F3BD;
             text-align: center;
             position: relative;
+            top: 0px;
+            transition: top ease 0.4s;
+            cursor: pointer;
             .project-titles-wrapper {
                 margin: 0;
                 width: 100%;
@@ -56,6 +59,12 @@
                     font-size: 18px;
                 }
             }
+        }
+        .project-title-card-selected {
+            background: #AD00FF;
+            color: white;
+            font-weight: bold;
+            top: -5px;
         }
 
         #project-title-card-0 {
