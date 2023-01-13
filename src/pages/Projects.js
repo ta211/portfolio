@@ -117,8 +117,71 @@ function ProjectRight () {
     )
 }
 
+// 2023 update -> project list
+function ProjectList(title, subtitle, projects) {
+    this.title = title;
+    this.subtitle = subtitle;
+    this.projects = projects;
+}
+
+const UXDesignList = new ProjectList(
+    "UX Design",
+    null,
+    []
+);
+
+const UXResearchList = new ProjectList(
+    "UX Research",
+    null,
+    []
+);
+
+const InternList = new ProjectList(
+    "iNtern!",
+    "My past internships",
+    []
+);
+
+const OtherList = new ProjectList(
+    "Other",
+    "Clubs, Hackathons, or just for fun!",
+    []
+);
+
+const projectLists = [
+    UXDesignList,
+    UXResearchList,
+    InternList,
+    OtherList,
+];
+
+function ProjectListCard({list, index}) {
+    return (
+        <div
+            className="project-title-card"
+            id={`project-title-card-${index}`}
+            key={`project-title-card-${index}`}
+        >
+            <div className="project-titles-wrapper">
+                <div className="project-title">{list.title}</div>
+                {
+                    list.subtitle && 
+                    <div className="project-subtitle">
+                        {"(" + list.subtitle + ")"}
+                    </div>
+                }
+            </div>
+        </div>
+    )
+}
+
 const projects = {
-    left: <ProjectLeft />,
+    left: 
+    <div className="project-left-container container">
+        <div className="project-title-cards">
+            {projectLists.map((list, index) => <ProjectListCard list={list} index={index} />)}
+        </div>
+    </div>,
     right: <ProjectRight />
 }
 export default projects;

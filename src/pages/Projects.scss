@@ -27,6 +27,50 @@
             }
         }
     }
+
+    .project-title-cards {
+        height: 80%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+
+        * {
+            font-family: 'Love Ya Like A Sister', cursive;
+        }
+
+        .project-title-card {
+            background: #60F3BD;
+            text-align: center;
+            position: relative;
+            .project-titles-wrapper {
+                margin: 0;
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                .project-title {
+                    font-size: 36px;
+                }
+                .project-subtitle {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        #project-title-card-0 {
+            transform: rotate(3deg);
+        }
+        #project-title-card-1 {
+            transform: rotate(-1deg);
+        }
+        #project-title-card-2 {
+            transform: rotate(-2deg);
+        }
+        #project-title-card-3 {
+            transform: rotate(0deg);
+        }
+    }
 }
 
 .project-right-container {

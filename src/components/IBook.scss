@@ -55,7 +55,7 @@ $lighter-grey: #DADADA;
             display: flex;
             height: $height;
             width: 100% * (0.5 + $text-width / 2);
-            margin-top: calc(30% - $height / 2);
+            top: calc(30% - $height / 2);
             &-icon {
                 height: $height - 20px;
                 width: 100% * (( 0.5 - $text-width / 2) / (0.5 + $text-width / 2));
@@ -143,7 +143,8 @@ $lighter-grey: #DADADA;
 
         .pagetitle {
             height: 50px;
-            margin-left: calc(20%);
+            position: absolute;
+            left: 20%;
             .pagetitle-text {
                 position: absolute;
                 bottom: -20px;
@@ -152,8 +153,11 @@ $lighter-grey: #DADADA;
 
         .container {
             position: absolute;
-            margin: 50% 50px 0 50px;
-            font-family: "Monda", sans-serif;
+            top: 40%;
+            left: 50px;
+            right: 50px;
+            bottom: 50px;
+            font-family: 'Love Ya Like A Sister', cursive;
         }
     }
     .rightpage {

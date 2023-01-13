@@ -1,11 +1,11 @@
 
 .preface-left-container .preface-arrow {
     height: 50px;
-    width: 80%;
     background: #FF008A;
-    position: fixed;
-    margin-left: calc(20% - 50px);
-    margin-top: calc(-20% - 35px);
+    position: absolute;
+    left: calc(20% - 30px);
+    top: calc(-16.66% - 45px);
+    right: -50px;
     transform: rotate(-2deg);
     transform-origin: left;
     z-index: -1;
@@ -15,8 +15,8 @@
         height: 50px;
         width: 50%;
         background: #FF008A;
-        position: fixed;
-        margin-top: calc(30% - 45px);
+        position: absolute;
+        top: calc(30% - 50px);
         transform: rotate(-2deg);
         transform-origin: left;
         z-index: -1;
@@ -25,8 +25,8 @@
         height: 50px;
         width: 50%;
         background: #FF008A;
-        position: fixed;
-        margin-top: calc(30% - 30px);
+        position: absolute;
+        top: calc(30% - 35px);
         transform: rotate(0);
         transform-origin: left;
         z-index: -1;
