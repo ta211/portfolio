@@ -83,6 +83,7 @@
 }
 
 .project-right-container {
+    // display: none;
     $margin: 20px;
     margin: $margin;
     margin-left: 60px;
@@ -132,6 +133,7 @@
         .empty-logo-card {
             padding-top: 100%;
             background: black;
+            opacity: 50%;
         }
         .project-logo-card {
             .project-logo {

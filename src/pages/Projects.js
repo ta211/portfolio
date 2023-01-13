@@ -249,6 +249,7 @@ function selectProjectList(index) {
     selected.classList.add(selectedClassName);
 
     // Update right page
+    document.getElementsByClassName("project-right-container")[0].style.display = "block";
     
     let projects = projectLists[index].projects;
     
