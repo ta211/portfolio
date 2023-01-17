@@ -1,3 +1,19 @@
+@keyframes tilty_1 {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(-10deg);}
+    50% {transform: rotate(0deg);}
+    75% {transform: rotate(10deg);}
+    100% {transform: rotate(0deg);}
+}
+
+@keyframes tilty_2 {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(10deg);}
+    50% {transform: rotate(0deg);}
+    75% {transform: rotate(-10deg);}
+    100% {transform: rotate(0deg);}
+}
+
 .contact-left-container {
     // font-size: 20px;
     // font-weight: bold;
@@ -29,6 +45,7 @@
             left: 9.16%;
             height: 39.58%;
             transform: rotate(5.38deg);
+            animation: tilty_1 7s infinite;
         }
         .linkedin_icon {
             position: absolute;
@@ -36,6 +53,7 @@
             left: 20.95%;
             height: 12.5%;
             transform: rotate(10.39deg);
+            animation: tilty_2 3s infinite;
         }
     }
     img {
