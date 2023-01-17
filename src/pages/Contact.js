@@ -12,13 +12,15 @@ const contactLeft =
 
 const contactRight = 
 <div className="contact-right-container container">
-    <img className="contact-right-bg" src={rightBG} />
-    <a className="github_icon" href="https://github.com/ta211/" target="_blank">
-        <img src={githubIcon} alt="Click to go to my Github page ta211"/>
-    </a>
-    <a className="linkedin_icon" href="https://www.linkedin.com/in/antang211" target="_blank">
-        <img src={linkedinIcon} alt="Click to go to my LinkedIn page antang211"/>
-    </a>
+    <div className="contact-map-wrapper">
+        <img className="contact-right-bg" src={rightBG} />
+        <a className="github_icon" href="https://github.com/ta211/" target="_blank">
+            <img src={githubIcon} alt="Click to go to my Github page ta211"/>
+        </a>
+        <a className="linkedin_icon" href="https://www.linkedin.com/in/antang211" target="_blank">
+            <img src={linkedinIcon} alt="Click to go to my LinkedIn page antang211"/>
+        </a>
+    </div>
 </div>
 
 const contact = {
