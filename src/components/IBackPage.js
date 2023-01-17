@@ -28,7 +28,6 @@ export function flipPage(index, curr, setCurr) {
     if (index == 1) {
         let offset = document.getElementById("ibook-curr-left").clientWidth * 0.8 * Math.sin(2 * Math.PI / 180);
         document.getElementById("ibook-curr-left").style.setProperty('--offset', offset);
-        console.log(document.documentElement.style);
     }
 }
 

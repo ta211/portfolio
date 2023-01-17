@@ -1,9 +1,11 @@
 import './IBook.scss';
 
 import IPage from './IPage';
-import IBackPage from './IBackPage';
+import IBackPage, { flipPage } from './IBackPage';
 
 import EyeIcon from '../icons/eye.svg';
+
+import { useState, useEffect } from 'react';
 
 function LeftPageCurr({icon, title, children, index}) {
     return (
@@ -33,6 +35,35 @@ function RightPageCurr({children, index, length}) {
 
 export default function IBook({curr, setCurr, pages}) {
     const length = pages.length;
+    const [arrowPressed, setArrowPressed] = useState(false);
+
+    useEffect(() => {
+        function handlePressStart({ code }) {
+            if (arrowPressed != false) return;
+            if (code == "ArrowLeft") setArrowPressed("Left");
+            if (code == "ArrowRight") setArrowPressed("Right");
+        }
+    
+        function handlePressFinish({ code }) {
+            if (arrowPressed == false) return;
+            if (code == "ArrowLeft") {
+                if (curr > 0) flipPage(curr - 1, curr, setCurr);
+                setArrowPressed(false);
+            }
+            if (code == "ArrowRight") {
+                if (curr < length - 1) flipPage(curr + 1, curr, setCurr);
+                setArrowPressed(false);
+            }
+        }
+    
+        document.addEventListener("keydown", handlePressStart);
+        document.addEventListener("keyup", handlePressFinish);
+    
+        return () => {
+          document.removeEventListener("keydown", handlePressStart);
+          document.removeEventListener("keyup", handlePressFinish);
+        };
+      }, [arrowPressed, setArrowPressed]);
 
     return (
         <div className="ibook-container">
